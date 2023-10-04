@@ -18,3 +18,14 @@ function getPlayerChoice() {
     return getPlayerChoice();
   }
 }
+
+function playRound(playerChoice, computerChoice) {
+  if (playerChoice === computerChoice) {
+    alert(`Both you and the computer played '${playerChoice}'. Round is a tie!`)
+  } else if ((playerChoice === "Rock" && computerChoice === "Scissors") || (playerChoice === "Paper" && computerChoice === "Rock") || (playerChoice === "Scissors" && computerChoice === "Paper")) {
+    alert(`You played '${playerChoice}' and the computer played '${computerChoice}'. You win this round!`)
+  } else {
+    alert(`You played '${playerChoice}' and the computer played '${computerChoice}'. You lose this round...`)
+  }
+}
+
