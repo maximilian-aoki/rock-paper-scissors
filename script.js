@@ -5,6 +5,16 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-function playRound() {
-  
+function getPlayerChoice() {
+  let playerChoice = prompt("What would you like to play? ('rock', 'paper', 'scissors')").trim().toLowerCase();
+  if (playerChoice === "rock") {
+    return "Rock";
+  } else if (playerChoice === "paper") {
+    return "Paper";
+  } else if (playerChoice === "scissors") {
+    return "Scissors";
+  } else {
+    alert("That's not a valid input!");
+    return getPlayerChoice();
+  }
 }
