@@ -1,10 +1,12 @@
 const gameOptions = ["Rock", "Paper", "Scissors"];
 
+// call a randomizer to select one of the gameOptions
 function getComputerChoice() {
   let computerChoice = gameOptions[Math.floor(Math.random() * gameOptions.length)];
   return computerChoice;
 }
 
+// prompt the user for a selection and verify the prompt. Return one of the gameOptions
 function getPlayerChoice() {
   let playerChoice = prompt("What would you like to play? ('rock', 'paper', 'scissors')").trim().toLowerCase();
   if (playerChoice === "rock") {
@@ -19,6 +21,7 @@ function getPlayerChoice() {
   }
 }
 
+// Play one round of rock-paper-scissors. Return result of the round.
 function playRound(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
     alert(`Both you and the computer played '${playerChoice}'. Round is a tie!`);
@@ -32,6 +35,7 @@ function playRound(playerChoice, computerChoice) {
   }
 }
 
+// use all pre-defined functions to play 5 rounds of rock-paper-scissors with a winner announcement
 function game() {
   alert("Welcome to 'Rock, Paper, Scissors'! Gameplay will last 5 rounds.")
 
@@ -59,4 +63,5 @@ function game() {
 
 }
 
+// call the game function
 game();
