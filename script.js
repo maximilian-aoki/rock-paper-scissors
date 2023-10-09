@@ -21,16 +21,22 @@ function getPlayerChoice() {
   }
 }
 
+
+
+const buttonContainer = document.querySelector('.button-container');
+buttonContainer.addEventListener('click', playRound)
+
 // Play one round of rock-paper-scissors. Return result of the round.
-function playRound(playerChoice, computerChoice) {
-  if (playerChoice === computerChoice) {
-    alert(`Both you and the computer played '${playerChoice}'. Round is a tie!`);
+function playRound(e) {
+  let computerChoice = getComputerChoice();
+  if (e.target.textContent === computerChoice) {
+    alert(`Both you and the computer played '${e.target.textContent}'. Round is a tie!`);
     return "Tie";
-  } else if ((playerChoice === "Rock" && computerChoice === "Scissors") || (playerChoice === "Paper" && computerChoice === "Rock") || (playerChoice === "Scissors" && computerChoice === "Paper")) {
-    alert(`You played '${playerChoice}' and the computer played '${computerChoice}'. You win this round!`);
+  } else if ((e.target.textContent === "Rock" && computerChoice === "Scissors") || (e.target.textContent === "Paper" && computerChoice === "Rock") || (e.target.textContent === "Scissors" && computerChoice === "Paper")) {
+    alert(`You played '${e.target.textContent}' and the computer played '${computerChoice}'. You win this round!`);
     return "Player Win";
   } else {
-    alert(`You played '${playerChoice}' and the computer played '${computerChoice}'. You lose this round...`);
+    alert(`You played '${e.target.textContent}' and the computer played '${computerChoice}'. You lose this round...`);
     return "Computer Win";
   }
 }
@@ -64,4 +70,4 @@ function game() {
 }
 
 // call the game function
-game();
+// game();
